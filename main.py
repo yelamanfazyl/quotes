@@ -31,6 +31,18 @@ quotes = [
 
 @app.get("/")
 def get_random_quote():
+    random_num = random.randint(1, 10)
+
+    if random_num > 8:
+        json = {"contents": [{"parts": [{"text": "Generate me a funny quote."}]}]}
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_api_key}"
+
+        response = requests.post(url=url, json=json)
+        logger.info(response.json())
+        return {
+            "quote": response.json()["candidates"][0]["content"]["parts"][0]["text"]
+        }
+
     return {"quote": random.choice(quotes)}
 
 

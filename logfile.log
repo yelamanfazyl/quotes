@@ -1,0 +1,37 @@
+[2025-06-10 19:51:11,434.434] INFO [7986683584] - Started server process [21349]
+[2025-06-10 19:51:11,434.434] INFO [7986683584] - Waiting for application startup.
+[2025-06-10 19:51:11,434.434] INFO [7986683584] - Application startup complete.
+[2025-06-10 19:51:11,435.435] INFO [7986683584] - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+[2025-06-10 19:51:39,916.916] INFO [6146830336] - {'candidates': [{'content': {'parts': [{'text': 'The first president of Kazakhstan was **Nursultan Nazarbayev**.\n'}], 'role': 'model'}, 'finishReason': 'STOP', 'avgLogprobs': -0.052996166547139484}], 'usageMetadata': {'promptTokenCount': 10, 'candidatesTokenCount': 15, 'totalTokenCount': 25, 'promptTokensDetails': [{'modality': 'TEXT', 'tokenCount': 10}], 'candidatesTokensDetails': [{'modality': 'TEXT', 'tokenCount': 15}]}, 'modelVersion': 'gemini-2.0-flash', 'responseId': 'e0ZIaMLCNaL_1PIPt-aTuAE'}
+[2025-06-10 19:51:39,918.918] INFO [7986683584] - 127.0.0.1:55651 - "POST /?question=Who%27s%20the%20first%20president%20of%20the%20Kazakhstan%3F HTTP/1.1" 200
+[2025-06-10 19:56:58,849.849] INFO [7986683584] - Shutting down
+[2025-06-10 19:56:58,954.954] INFO [7986683584] - Waiting for application shutdown.
+[2025-06-10 19:56:58,955.955] INFO [7986683584] - Application shutdown complete.
+[2025-06-10 19:56:58,956.956] INFO [7986683584] - Finished server process [21349]
+[2025-06-10 19:57:00,646.646] INFO [7986683584] - Started server process [21514]
+[2025-06-10 19:57:00,646.646] INFO [7986683584] - Waiting for application startup.
+[2025-06-10 19:57:00,646.646] INFO [7986683584] - Application startup complete.
+[2025-06-10 19:57:00,647.647] INFO [7986683584] - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+[2025-06-10 19:57:09,967.967] INFO [7986683584] - 127.0.0.1:55727 - "GET /docs HTTP/1.1" 200
+[2025-06-10 19:57:10,089.089] INFO [7986683584] - 127.0.0.1:55727 - "GET /openapi.json HTTP/1.1" 200
+[2025-06-10 19:57:12,782.782] INFO [7986683584] - 127.0.0.1:55730 - "GET / HTTP/1.1" 200
+[2025-06-10 19:57:18,405.405] INFO [7986683584] - 127.0.0.1:55733 - "GET / HTTP/1.1" 200
+[2025-06-10 19:57:20,869.869] INFO [7986683584] - 127.0.0.1:55733 - "GET / HTTP/1.1" 200
+[2025-06-10 19:57:29,508.508] INFO [7986683584] - 127.0.0.1:55736 - "GET / HTTP/1.1" 200
+[2025-06-10 19:57:35,330.330] INFO [7986683584] - 127.0.0.1:55737 - "GET / HTTP/1.1" 200
+[2025-06-10 19:57:41,847.847] INFO [6145568768] - {'candidates': [{'content': {'parts': [{'text': 'I told my wife she was drawing her eyebrows too high. She seemed surprised.\n'}], 'role': 'model'}, 'finishReason': 'STOP', 'avgLogprobs': -0.058402794248917526}], 'usageMetadata': {'promptTokenCount': 6, 'candidatesTokenCount': 17, 'totalTokenCount': 23, 'promptTokensDetails': [{'modality': 'TEXT', 'tokenCount': 6}], 'candidatesTokensDetails': [{'modality': 'TEXT', 'tokenCount': 17}]}, 'modelVersion': 'gemini-2.0-flash', 'responseId': '5UdIaMavLNeI_NUPmYvnoA8'}
+[2025-06-10 19:57:41,848.848] INFO [7986683584] - 127.0.0.1:55741 - "GET / HTTP/1.1" 200
+[2025-06-10 19:57:53,203.203] INFO [6145568768] - {'candidates': [{'content': {'parts': [{'text': 'I told my wife she was drawing her eyebrows too high. She seemed surprised.\n'}], 'role': 'model'}, 'finishReason': 'STOP', 'avgLogprobs': -0.06136805169722613}], 'usageMetadata': {'promptTokenCount': 6, 'candidatesTokenCount': 17, 'totalTokenCount': 23, 'promptTokensDetails': [{'modality': 'TEXT', 'tokenCount': 6}], 'candidatesTokensDetails': [{'modality': 'TEXT', 'tokenCount': 17}]}, 'modelVersion': 'gemini-2.0-flash', 'responseId': '8UdIaNb6BNeI_NUPmYvnoA8'}
+[2025-06-10 19:57:53,204.204] INFO [7986683584] - 127.0.0.1:55743 - "GET / HTTP/1.1" 200
+[2025-06-10 19:57:54,613.613] INFO [7986683584] - 127.0.0.1:55743 - "GET / HTTP/1.1" 200
+[2025-06-10 19:57:56,740.740] INFO [6145568768] - {'candidates': [{'content': {'parts': [{'text': 'I told my wife she was drawing her eyebrows too high. She seemed surprised.\n'}], 'role': 'model'}, 'finishReason': 'STOP', 'avgLogprobs': -0.058402794248917526}], 'usageMetadata': {'promptTokenCount': 6, 'candidatesTokenCount': 17, 'totalTokenCount': 23, 'promptTokensDetails': [{'modality': 'TEXT', 'tokenCount': 6}], 'candidatesTokensDetails': [{'modality': 'TEXT', 'tokenCount': 17}]}, 'modelVersion': 'gemini-2.0-flash', 'responseId': '9EdIaKu6KLjX1PIPzJ2c-Qo'}
+[2025-06-10 19:57:56,743.743] INFO [7986683584] - 127.0.0.1:55743 - "GET / HTTP/1.1" 200
+[2025-06-10 19:58:00,092.092] INFO [7986683584] - 127.0.0.1:55746 - "GET / HTTP/1.1" 200
+[2025-06-10 19:58:01,375.375] INFO [7986683584] - 127.0.0.1:55746 - "GET / HTTP/1.1" 200
+[2025-06-10 19:58:02,099.099] INFO [7986683584] - 127.0.0.1:55746 - "GET / HTTP/1.1" 200
+[2025-06-10 19:58:03,678.678] INFO [6145568768] - {'candidates': [{'content': {'parts': [{'text': "Why don't scientists trust atoms? Because they make up everything!\n"}], 'role': 'model'}, 'finishReason': 'STOP', 'avgLogprobs': -0.039733115832010904}], 'usageMetadata': {'promptTokenCount': 6, 'candidatesTokenCount': 15, 'totalTokenCount': 21, 'promptTokensDetails': [{'modality': 'TEXT', 'tokenCount': 6}], 'candidatesTokensDetails': [{'modality': 'TEXT', 'tokenCount': 15}]}, 'modelVersion': 'gemini-2.0-flash', 'responseId': '-0dIaImIKbjX1PIPzJ2c-Qo'}
+[2025-06-10 19:58:03,679.679] INFO [7986683584] - 127.0.0.1:55747 - "GET / HTTP/1.1" 200
+[2025-06-10 19:58:10,348.348] INFO [7986683584] - Shutting down
+[2025-06-10 19:58:10,450.450] INFO [7986683584] - Waiting for application shutdown.
+[2025-06-10 19:58:10,451.451] INFO [7986683584] - Application shutdown complete.
+[2025-06-10 19:58:10,451.451] INFO [7986683584] - Finished server process [21514]
