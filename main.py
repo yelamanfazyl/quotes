@@ -1,5 +1,12 @@
 from fastapi import FastAPI
 import random
+import os
+import requests
+import logging
+
+logger = logging.getLogger(__name__)
+
+gemini_api_key = os.getenv("GEMINI_API_KEY")
 
 app = FastAPI()
 
@@ -25,3 +32,13 @@ quotes = [
 @app.get("/")
 def get_random_quote():
     return {"quote": random.choice(quotes)}
+
+
+@app.post("/")
+def ask_question(question: str):
+    json = {"contents": [{"parts": [{"text": question}]}]}
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_api_key}"
+
+    response = requests.post(url=url, json=json)
+    logger.info(response.json())
+    return {"answer": response.json()["candidates"][0]["content"]["parts"][0]["text"]}
