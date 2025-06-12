@@ -83,6 +83,6 @@ def send_to_email(email: str, name: str):
             ),
         )
     except Exception as e:
-        raise HTTPException(status_code=300, detail=str(e))
+        raise HTTPException(status_code=400, detail=str(e))
 
     return Response(status_code=200)
