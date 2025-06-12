@@ -517,6 +517,23 @@ files = [
 ]
 
 [[package]]
+name = "mock"
+version = "5.2.0"
+description = "Rolling backport of unittest.mock for all Pythons"
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+files = [
+    {file = "mock-5.2.0-py3-none-any.whl", hash = "sha256:7ba87f72ca0e915175596069dbbcc7c75af7b5e9b9bc107ad6349ede0819982f"},
+    {file = "mock-5.2.0.tar.gz", hash = "sha256:4e460e818629b4b173f32d08bf30d3af8123afbb8e04bb5707a1fd4799e503f0"},
+]
+
+[package.extras]
+build = ["blurb", "twine", "wheel"]
+docs = ["sphinx"]
+test = ["pytest", "pytest-cov"]
+
+[[package]]
 name = "pydantic"
 version = "2.11.5"
 description = "Data validation using Python type hints"
@@ -1163,4 +1180,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "79d89923cafdc59c001e222517de09af4c1cb650b694f07321a06edfd09e6d3f"
+content-hash = "1ea6cd68b88c13fc6f8d5acb6a666dc086f3977af19ca3dd6d7bb769ae8ee75b"

@@ -1,12 +1,50 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Response
 import random
 import os
 import requests
 import logging
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
 gemini_api_key = os.getenv("GEMINI_API_KEY")
+
+gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_api_key}"
+mailtrap_url = "https://send.api.mailtrap.io/api/send"
+from_email = "yelaman@demomailtrap.co"
+
+headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Api-Token": os.getenv("MAILTRAP_API_KEY"),
+}
+
+
+def send_text_to_email(email: str, name: str, text: str):
+    payload = {
+        "to": [{"email": email, "name": name}],
+        "from": {"email": from_email, "name": from_email},
+        "subject": "Random Quote",
+        "text": text,
+    }
+
+    response = requests.post(mailtrap_url, json=payload, headers=headers)
+
+    if not response.json()["success"]:
+        raise Exception("Email was not sent properly")
+
+
+def generate_content(prompt: str) -> str:
+    json = {"contents": [{"parts": [{"text": prompt}]}]}
+    response = requests.post(url=gemini_url, json=json)
+    print(response.status_code)
+    if response.status_code != 200:
+        raise Exception("There was an error with Gemini API")
+
+    return response.json()["candidates"][0]["content"]["parts"][0]["text"]
+
 
 app = FastAPI()
 
@@ -31,26 +69,20 @@ quotes = [
 
 @app.get("/")
 def get_random_quote():
-    random_num = random.randint(1, 10)
-
-    if random_num > 8:
-        json = {"contents": [{"parts": [{"text": "Generate me a funny quote."}]}]}
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_api_key}"
-
-        response = requests.post(url=url, json=json)
-        logger.info(response.json())
-        return {
-            "quote": response.json()["candidates"][0]["content"]["parts"][0]["text"]
-        }
-
     return {"quote": random.choice(quotes)}
 
 
-@app.post("/")
-def ask_question(question: str):
-    json = {"contents": [{"parts": [{"text": question}]}]}
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_api_key}"
+@app.get("/send-to-email")
+def send_to_email(email: str, name: str):
+    try:
+        send_text_to_email(
+            email,
+            name,
+            generate_content(
+                "Create short and funny quote. It should be about programming."
+            ),
+        )
+    except Exception as e:
+        raise HTTPException(status_code=300, detail=str(e))
 
-    response = requests.post(url=url, json=json)
-    logger.info(response.json())
-    return {"answer": response.json()["candidates"][0]["content"]["parts"][0]["text"]}
+    return Response(status_code=200)
